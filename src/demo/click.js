@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 class click extends Component {
 	constructor(props) {
@@ -24,10 +23,10 @@ class click extends Component {
 	handleClick = () => {
 		console.log('this is:', this);
 	 }
-	 deleteRow(id,e){
-		 console.log(id)
-		 console.log(e)
-	 }
+	deleteRow(id,e){
+		console.log(id)
+		console.log(e)
+	}
 	render() {
 		return (
 			<div id="home-container">

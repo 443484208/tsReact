@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 class show extends Component {
 	constructor(props) {
@@ -28,24 +27,27 @@ class show extends Component {
     divChange(e,data){
         this.setState({divShow: !data});
     }
+	 renderList(){
+	    const listShow = this.state.listShow;
+	    if (listShow) {
+			return <div className="show-div-red" onClick={(e) => this.listChange(e, this.state.listShow)}>{this.state.listShow}</div>;
+	    } else {
+	        return <div className="show-div-bule" onClick={(e) => this.listChange(e, this.state.listShow)}>{this.state.listShow}</div>;
+	    }
+	}
 	render() {
         const divShow = this.state.divShow;
-        const listShow = this.state.listShow;
+        
         let div;
-        let list;
         if (divShow) {
             div = <div className="show-div-bule"  onClick={(e) => this.divChange(e, this.state.divShow)} >{this.state.divShow}</div>;
         } else {
             div = <div className="show-div-red"  onClick={(e) => this.divChange(e, this.state.divShow)} >{this.state.divShow}</div>;
         }
-        if (listShow) {
-            list = <div className="show-div-red" onClick={(e) => this.listChange(e, this.state.listShow)}>{this.state.listShow}</div>;
-        } else {
-            list = <div className="show-div-bule" onClick={(e) => this.listChange(e, this.state.listShow)}>{this.state.listShow}</div>;
-        }
+		
 		return (
 			<div id="home-container">
-			{list}
+			{this.renderList()}
 			{div}
 			</div>
 		);

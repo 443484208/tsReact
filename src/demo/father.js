@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 // 引用组件
 // 调用组件方法this.refs.ExhibitionText.fn()

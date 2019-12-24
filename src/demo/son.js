@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 class son extends Component {
     constructor(props) {
@@ -10,7 +9,6 @@ class son extends Component {
         // this.handleClick = this.handleClick.bind(this);就可以handleClick(){}
         //否则就是handleClick = () => {}
         this.sonClick = this.sonClick.bind(this);
-
     }
     componentWillMount() {
         // 组件初始化时只调用，以后组件更新不调用，

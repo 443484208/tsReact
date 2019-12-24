@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
  
 import App from './../App';
  
 import four from './../componets/404';
+import gscroll from './../componets/gscroll';
 import ss from './../componets/ss';
 import click from './../demo/click';
 import show from './../demo/show';
@@ -13,6 +13,7 @@ import form from './../demo/form';
 import father from './../demo/father';
 import scroll from './../demo/scroll';
 import slide from './../demo/slide';
+import hookState from './../demo/hookState';
 
 const Root = () => (
    <div>
@@ -31,6 +32,8 @@ const Root = () => (
                      <Route path="/father" component={father} />
                      <Route path="/scroll" component={scroll} />
                      <Route path="/slide" component={slide} />
+                     <Route path="/hookState" component={hookState} />
+                     <Route path="/gscroll" component={gscroll} />
                       {/*路由不正确时，默认跳回home页面*/}
                      <Route render={() => <Redirect to="/" />} />
                   </Switch>

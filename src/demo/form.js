@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 class form extends Component {
     constructor(props) {
@@ -26,6 +25,8 @@ class form extends Component {
         // 组件将要卸载时调用，一些事件监听和定时器需要在此时清除。
     }
     handleSubmit() {
+        console.log(this.state.value);
+        console.log(this.state.flavor);
 
     }
     handleChange(event) {
@@ -41,7 +42,7 @@ class form extends Component {
     render() {
         return (
             <div id="home-container">
-                <form onSubmit={this.handleSubmit}>
+              
                     <label>
                         名字:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
@@ -55,8 +56,8 @@ class form extends Component {
                             <option value="mango">芒果</option>
                         </select>
                     </label>
-                    <input type="submit" value="提交" />
-                </form>
+                    <input onClick={this.handleSubmit} type="submit" value="提交" />
+            
             </div>
         );
     }

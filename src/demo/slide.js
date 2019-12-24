@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 class scroll extends Component {
 	constructor(props) {
