@@ -17,8 +17,7 @@ class ss extends Component {
 		// 整个生命周期只调用一次，此时可以修改state。
 	}
 	componentDidMount() {
-		console.log('this=',window);
-		
+		console.log('this=', window);
 		// componentDidMount方法会在组件已经被渲染到 
 		// DOM 中后运行，所以，最好在这里设置计时器：
 		console.log(this.props.children)
@@ -32,7 +31,7 @@ class ss extends Component {
 			<div id="home-container">
 				{/*search,state可以自定义，获取方法：this.props.location.search，this.props.location.state*/}
 				<div>
-					<Link to={{ pathname: '/404',query : { querys : 'sunny' }, search: '?name=homename', state: { mold: 'add' } }} className="home-link">
+					<Link to={{ pathname: '/404', query: { querys: 'sunny' }, search: '?name=homename', state: { mold: 'add' } }} className="home-link">
 						{this.state.value}
 					</Link>
 				</div>
@@ -56,7 +55,6 @@ class ss extends Component {
 						跳转表单例子
 					</Link>
 				</div>
-				
 				<div>
 					<Link to={{ pathname: '/father' }} className="home-link">
 						跳转父子组件例子

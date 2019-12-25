@@ -7,13 +7,11 @@ function infitityScroll() {
     var list = Array.from({ length: 100 }, () => {
         return count++;
     });
-
     var liHeight = 50, // 单个li高度 
         liMarginTop = 10, // li的marginTop 
         viewHeight = 400, // 视口高度 
         viewWidth = 200, // 视口宽度 
         showLiCount = parseInt(viewHeight / (liHeight + liMarginTop)) + 1; // 视口内盛放的li个数 
-
     const [nowList, setNowList] = useState(list.slice(0, showLiCount));
     const [ulTop, setUlTop] = useState(0); // 内部第二个ul距离容器的距离 
     const [ulHeight, setUlHeight] = useState(
@@ -36,11 +34,9 @@ function infitityScroll() {
     };
     const g = (e) => {
         console.log(e);
-
     }
 
     return (
-
         <div>
             <Ss />
             <div

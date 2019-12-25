@@ -12,7 +12,6 @@ class father extends Component {
         // 为了在回调中使用 `this`，这个绑定是必不可少的
         // this.handleClick = this.handleClick.bind(this);就可以handleClick(){}
         //否则就是handleClick = () => {}
-
         this.sonChange = this.sonChange.bind(this);
         this.sonClick = this.sonClick.bind(this);
         this.fatherClick=this.fatherClick.bind(this);

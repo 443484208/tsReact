@@ -7,7 +7,7 @@ class Home extends Component {
          value: '找不到页面',
       };
    }
-      // {/*this.props.location接受上一页传送的数据*/}
+   // {/*this.props.location接受上一页传送的数据*/}
    render() {
       return (
          <div id="home-container">
@@ -16,7 +16,7 @@ class Home extends Component {
             <p>state:{this.props.location.state.mold} </p>
             <p>query:{this.props.location.query.querys} </p>
             <div onClick={() => this.props.history.goBack()}>返回上一页</div>
-			<div>1.params和 search 只能传字符串,刷新页面参数不会丢2.query和 state 可以传对象,但是刷新页面参数会丢失</div>
+            <div>1.params和 search 只能传字符串,刷新页面参数不会丢2.query和 state 可以传对象,但是刷新页面参数会丢失</div>
          </div>
       );
    }

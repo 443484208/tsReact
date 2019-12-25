@@ -3,7 +3,7 @@ class scroll extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			arr: [1, 2, 3,5,4]
+			arr: [1, 2, 3, 5, 4]
 		};
 		// 这里必须声明 textInput，这样 ref 才可以引用它
 		this.textInput = React.createRef();
@@ -24,8 +24,8 @@ class scroll extends Component {
 		// window.addEventListener('scroll', this.handleScroll);
 		this.box = this.textInput;
 		console.log(this.box);
-        // 监听这个dom的scroll事件
-        this.box.current.addEventListener('scroll', this.handleScroll);
+		// 监听这个dom的scroll事件
+		this.box.current.addEventListener('scroll', this.handleScroll);
 	}
 	handleScroll = (event) => {
 		//滚动条高度
@@ -33,13 +33,13 @@ class scroll extends Component {
 		let scrollTop = event.target.scrollTop;  //滚动条滚动高度
 		let scrollHeight = event.target.scrollHeight; //滚动内容高度
 		// 100px相差内
-		if ((scrollTop+clientHeight) >= (scrollHeight-100)) {
-			console.log("滚动条滚动高度=",scrollTop);
-			console.log("滚动内容高度=",scrollHeight);
-			console.log("可视区域高度=",clientHeight);
+		if ((scrollTop + clientHeight) >= (scrollHeight - 100)) {
+			console.log("滚动条滚动高度=", scrollTop);
+			console.log("滚动内容高度=", scrollHeight);
+			console.log("可视区域高度=", clientHeight);
 			console.log("到达底部");
 		} else {
-			console.log('scrollTop=',scrollTop);
+			console.log('scrollTop=', scrollTop);
 		}
 	}
 	render() {
@@ -47,12 +47,13 @@ class scroll extends Component {
 		function NumberList(props) {
 			const numbers = props.numbers;
 			const listItems = numbers.map((number, index) =>
-				<div className={`slide-div ${index===2?'sss':''}`} key={index}>{number}+{index}</div>
+				<div className={`slide-div ${index === 2 ? 'sss' : ''}`} key={index}>{number}+{index}</div>
 			);
 			return (
 				<div>{listItems}</div>
 			);
 		};
+		
 		return (
 			<div id="slide_div" ref={this.textInput}>
 				<NumberList numbers={this.state.arr} />

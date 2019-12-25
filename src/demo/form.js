@@ -38,26 +38,23 @@ class form extends Component {
         console.log(event.target.value)
     }
 
-
     render() {
         return (
             <div id="home-container">
-              
-                    <label>
-                        名字:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-                    </label>
-                    <label>
-                        选择你喜欢的风味:
-                        <select value={this.state.flavor} onChange={this.flavorChange}>
-                            <option value="grapefruit">葡萄柚</option>
-                            <option value="lime">柠檬</option>
-                            <option value="coconut">椰子</option>
-                            <option value="mango">芒果</option>
-                        </select>
-                    </label>
-                    <input onClick={this.handleSubmit} type="submit" value="提交" />
-            
+                <label>
+                    名字:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <label>
+                    选择你喜欢的风味:
+                    <select value={this.state.flavor} onChange={this.flavorChange}>
+                        <option value="grapefruit">葡萄柚</option>
+                        <option value="lime">柠檬</option>
+                        <option value="coconut">椰子</option>
+                        <option value="mango">芒果</option>
+                    </select>
+                </label>
+                <input onClick={this.handleSubmit} type="submit" value="提交" />
             </div>
         );
     }
