@@ -12,10 +12,6 @@ class ss extends Component {
 			value: ' 点击跳转到路由参数search，state使用',
 		};
 	}
-	componentWillMount() {
-		// 组件初始化时只调用，以后组件更新不调用，
-		// 整个生命周期只调用一次，此时可以修改state。
-	}
 	componentDidMount() {
 		console.log('this=', window);
 		// componentDidMount方法会在组件已经被渲染到 

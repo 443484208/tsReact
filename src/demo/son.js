@@ -10,10 +10,6 @@ class son extends Component {
         //否则就是handleClick = () => {}
         this.sonClick = this.sonClick.bind(this);
     }
-    componentWillMount() {
-        // 组件初始化时只调用，以后组件更新不调用，
-        // 整个生命周期只调用一次，此时可以修改state。
-    }
     componentDidMount() {
         // componentDidMount方法会在组件已经被渲染到 
         // DOM 中后运行，所以，最好在这里设置计时器：

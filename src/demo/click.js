@@ -9,10 +9,6 @@ class click extends Component {
 		// this.handleClick = this.handleClick.bind(this);就可以handleClick(){}
 		//否则就是handleClick = () => {}
 	}
-	componentWillMount() {
-		// 组件初始化时只调用，以后组件更新不调用，
-		// 整个生命周期只调用一次，此时可以修改state。
-	}
 	componentDidMount() {
 		// componentDidMount方法会在组件已经被渲染到 
 		// DOM 中后运行，所以，最好在这里设置计时器：

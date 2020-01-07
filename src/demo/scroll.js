@@ -12,10 +12,6 @@ class scroll extends Component {
 		//否则就是handleClick = () => {}
 		this.handleScroll = this.handleScroll.bind(this);
 	}
-	componentWillMount() {
-		// 组件初始化时只调用，以后组件更新不调用，
-		// 整个生命周期只调用一次，此时可以修改state。
-	}
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
 		// 组件将要卸载时调用，一些事件监听和定时器需要在此时清除。

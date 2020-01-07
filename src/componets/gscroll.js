@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import Ss from './ss';
 function infitityScroll() {
@@ -11,19 +11,21 @@ function infitityScroll() {
         liMarginTop = 10, // li的marginTop 
         viewHeight = 400, // 视口高度 
         viewWidth = 200, // 视口宽度 
-        showLiCount = parseInt(viewHeight / (liHeight + liMarginTop)) + 1; // 视口内盛放的li个数 
+        showLiCount = parseInt((viewHeight / (liHeight + liMarginTop)),10) + 1; // 视口内盛放的li个数 
     const [nowList, setNowList] = useState(list.slice(0, showLiCount));
     const [ulTop, setUlTop] = useState(0); // 内部第二个ul距离容器的距离 
-    const [ulHeight, setUlHeight] = useState(
+    const [ulHeight] = useState(
         // 计算所有li的总的高度 
         list.length * liHeight + (list.length + 1) * liMarginTop
     );
+    const [bodyHeight, setBodyHeight] = useState(0);
     const ulContainer = React.createRef();
     // 监听这个dom的scroll事件
     const gScroll = () => {
         var nowTop = ulContainer.current.scrollTop;
+        console.log(nowTop > bodyHeight ? '向下' : '向上')
         setUlTop(nowTop - (nowTop % (liHeight + liMarginTop)));
-        var start = parseInt(nowTop / (liHeight + liMarginTop));
+        var start = parseInt((nowTop / (liHeight + liMarginTop)),10);
         setNowList(list.slice(start, start + showLiCount));
         if (ulHeight < (nowTop + viewHeight + liHeight)) {
             console.log('即将到底部')
@@ -31,6 +33,8 @@ function infitityScroll() {
             console.log('到达顶部')
             console.log(nowTop)
         }
+        setBodyHeight(nowTop);
+
     };
     const g = (e) => {
         console.log(e);
@@ -65,9 +69,7 @@ function infitityScroll() {
                     {nowList.map((item, index) => {
                         return (
                             <li onClick={() => {
-                                console.log(index);
-                                console.log(item);
-                                g(index);
+                                g(item);
                             }}
                                 key={index}
                                 style={{
