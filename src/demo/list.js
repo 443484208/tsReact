@@ -7,7 +7,7 @@ class list extends Component {
 		};
 		// 为了在回调中使用 `this`，这个绑定是必不可少的
 		// this.handleClick = this.handleClick.bind(this);就可以handleClick(){}
-		//否则就是handleClick = () => {}
+		// 否则就是handleClick = () => {}
 	}
 	// componentWillMount() {
 	// 	// 组件初始化时只调用，以后组件更新不调用，

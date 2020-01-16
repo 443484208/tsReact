@@ -1,5 +1,15 @@
 import React, { Component, useState, useEffect, useLayoutEffect, useCallback, useRef } from 'react';
 
+class Child extends Component {
+	handleLog = () => {
+		console.log('Child Component');
+	}
+	render() {
+		const { countss } = this.props;
+		return <h2>countss: {countss}</h2>
+	}
+}
+
 function Example() {
 	// useRef 获取DOM元素的节点
 	// 获取子组件的实例
@@ -10,6 +20,7 @@ function Example() {
 	const [napa, setNapa] = useState([{ name: '6' }, { name: '65' }]);
 	const cb = useCallback(() => { setCount(count * count) });
 	// 相当于 componentDidMount 和 componentDidUpdate:
+	// useEffect 会在 DOM 渲染之后执行，所以我们可以利用这个特性，避免一些由于 DOM 渲染之后进行操作导致的白屏问题。
 	// 当你调用 useEffect 时，就是在告诉 React 在完成对 DOM 的更改后运行你的“副作用”函数。
 	// 给useEffect传递第二个参数[count]，这样只有count改变的时候才会执行,不然每次组件刷新都会跟着刷新
 	// 组件挂载时只执行一次
@@ -23,7 +34,6 @@ function Example() {
 		refUse.current.handleLog();
 	}, [count]);
 	// useLayoutEffect在dom之前执行
-	// useEffect 会在 DOM 渲染之后执行，所以我们可以利用这个特性，避免一些由于 DOM 渲染之后进行操作导致的白屏问题。
 	// 给useLayoutEffect第二个参数[]实际上没啥效果
 	useLayoutEffect(() => {
 		document.title = `You clicked ${count} `;
@@ -44,14 +54,6 @@ function Example() {
 	);
 }
 
-class Child extends Component {
-	handleLog = () => {
-		console.log('Child Component');
-	}
-	render() {
-		const { countss } = this.props;
-		return <h2>countss: {countss}</h2>
-	}
-}
+
 
 export default Example;
