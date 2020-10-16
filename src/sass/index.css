@@ -1,0 +1,7 @@
+.Apps{
+  background-color: #282c34;
+  .header{
+    min-height: 100vh;
+    color: white;
+  }
+}

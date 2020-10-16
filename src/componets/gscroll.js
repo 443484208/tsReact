@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import Ss from './ss';
+import store from '../redux/demo.js'
 function infitityScroll() {
     // 模拟100条数据 
     var count = 0;
@@ -23,6 +22,8 @@ function infitityScroll() {
     // 监听这个dom的scroll事件
     const gScroll = () => {
         var nowTop = ulContainer.current.scrollTop;
+        var nowLeft = ulContainer.current.scrollLeft;
+        console.log(nowLeft)
         console.log(nowTop > bodyHeight ? '向下' : '向上')
         setUlTop(nowTop - (nowTop % (liHeight + liMarginTop)));
         var start = parseInt((nowTop / (liHeight + liMarginTop)),10);
@@ -36,13 +37,25 @@ function infitityScroll() {
         setBodyHeight(nowTop);
 
     };
+    
     const g = (e) => {
         console.log(e);
     }
-
+  
+    let inc = () => {
+        return { type: 'INCREMENT' };
+      }
+      // let dec = () => {
+      //   return { type: 'DECREMENT' };
+      // }
+    store.dispatch(inc());
+    console.log( store.getState() );
+    const reduxClick=()=>{
+        
+    }
     return (
         <div>
-            <Ss />
+            <div onClick={reduxClick}></div>
             <div
                 style={{
                     height: viewHeight + "px",
@@ -53,6 +66,7 @@ function infitityScroll() {
                 }}
                 ref={ulContainer}
                 onScroll={gScroll}
+                
             >
                 <ul style={{ margin: 0, padding: 0, height: ulHeight + "px" }}></ul>
                 <ul

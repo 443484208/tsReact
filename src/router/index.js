@@ -14,6 +14,7 @@ import father from './../demo/father';
 import scroll from './../demo/scroll';
 import slide from './../demo/slide';
 import hookState from './../demo/hookState';
+import cardSlot from './../demo/cardSlot';
 
 const Root = () => (
    <div>
@@ -34,6 +35,7 @@ const Root = () => (
                      <Route path="/slide" component={slide} />
                      <Route path="/hookState" component={hookState} />
                      <Route path="/gscroll" component={gscroll} />
+                     <Route path="/cardSlot" component={cardSlot} />
                       {/*路由不正确时，默认跳回home页面*/}
                      <Route render={() => <Redirect to="/" />} />
                   </Switch>

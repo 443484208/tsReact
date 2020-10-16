@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import store from '../redux/demo.js'
 
 class ss extends Component {
 	constructor(props) {
@@ -12,11 +13,14 @@ class ss extends Component {
 			value: ' 点击跳转到路由参数search，state使用',
 		};
 	}
+
 	componentDidMount() {
 		console.log('this=', window);
 		// componentDidMount方法会在组件已经被渲染到 
 		// DOM 中后运行，所以，最好在这里设置计时器：
 		console.log(this.props.children)
+		console.log(store.getState())
+
 	}
 	componentWillUnmount() {
 		// 组件将要卸载时调用，一些事件监听和定时器需要在此时清除。
@@ -74,6 +78,11 @@ class ss extends Component {
 				<div>
 					<Link to={{ pathname: '/gscroll' }} className="home-link">
 						跳转无限滚动例子
+					</Link>
+				</div>
+				<div>
+					<Link to={{ pathname: '/cardSlot' }} className="home-link">
+						跳转插槽例子
 					</Link>
 				</div>
 			</div>
